@@ -43,6 +43,22 @@ public class TaskDAO {
         }
     }
 
+    public List<Task> getCompleted()
+    {
+        try(Session session = HibernateUtil.getSessionFactory().openSession())
+        {
+            return session.createQuery("FROM Task WHERE status = true",Task.class).list();
+        }
+    }
+
+public List<Task> getPending()
+{
+    try(Session session = HibernateUtil.getSessionFactory().openSession())
+    {
+        return session.createQuery("FROM Task WHERE status = false",Task.class).list();
+    }
+}
+
     public void updateTask(Task task)
     {
         Transaction transaction = null;

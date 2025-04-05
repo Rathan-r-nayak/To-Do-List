@@ -30,27 +30,11 @@ public class TaskService {
 
     public List<Task> getCompleted()
     {
-        List<Task> list = new ArrayList<>();
-        for(Task task : taskDAO.getAllTasks())
-        {
-            if(task.getStatus())
-            {
-                list.add(task);
-            }
-        }
-        return list;
+        return taskDAO.getCompleted();
     }
     public List<Task> getPending()
     {
-        List<Task> list = new ArrayList<>();
-        for(Task task : taskDAO.getAllTasks())
-        {
-            if(!task.getStatus())
-            {
-                list.add(task);
-            }
-        }
-        return list;
+        return taskDAO.getPending();
     }
     public boolean updateTask(Task task) {
         if (task.getId() <= 0) {
