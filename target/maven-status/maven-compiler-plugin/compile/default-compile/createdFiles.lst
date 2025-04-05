@@ -1,8 +1,0 @@
-com/example/config/WebConfig.class
-com/example/model/Task.class
-com/example/config/HibernateUtil.class
-com/example/service/TaskService.class
-com/example/controller/TaskController.class
-com/example/initializer/AppInitializer.class
-com/example/dao/TaskDAO.class
-com/example/config/HibernateConfig.class
